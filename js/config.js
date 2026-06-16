@@ -5,7 +5,7 @@
    No need to touch the HTML, CSS or main.js for normal changes.
    ===================================================================== */
 
-const WEDDING_CONFIG = {
+window.WEDDING_CONFIG = {
 
   /* ---- Couple ---- */
   couple: {
