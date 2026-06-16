@@ -13,6 +13,11 @@
   };
 
   /* ------------------------------------------------------------------
+     CURRENT LANGUAGE STATE
+  ------------------------------------------------------------------ */
+  let currentLang = "uz";
+
+  /* ------------------------------------------------------------------
      1. POPULATE CONTENT FROM CONFIG
   ------------------------------------------------------------------ */
   function populate() {
@@ -29,9 +34,9 @@
 
     // Document title / monogram
     if (couple.groom && couple.bride) {
-      document.title = `${couple.groom} & ${couple.bride} — Taklifnoma`;
+      document.title = couple.groom + " & " + couple.bride + " — Taklifnoma";
       const mono = document.getElementById("preloaderMonogram");
-      if (mono) mono.textContent = `${couple.groom[0]} & ${couple.bride[0]}`;
+      if (mono) mono.textContent = couple.groom[0] + " & " + couple.bride[0];
     }
 
     // Section titles
@@ -61,9 +66,65 @@
 
     // Final
     setText("finalThanks", text.thankYou);
-    setText("finalNames", text.finalNames || `${couple.groom} & ${couple.bride}`);
+    setText("finalNames", text.finalNames || (couple.groom + " & " + couple.bride));
     setText("finalDate", event.dateLabel);
     setText("finalTime", event.timeLabel);
+  }
+
+  /* ------------------------------------------------------------------
+     1b. LANGUAGE SWITCHER
+  ------------------------------------------------------------------ */
+  function setupLanguage() {
+    var translations = C.translations || {};
+    var saved = localStorage.getItem("wedding-lang");
+    currentLang = (saved === "ru") ? "ru" : "uz";
+
+    var buttons = document.querySelectorAll(".lang-switch__btn");
+
+    // Apply the saved language on load
+    applyLanguage(currentLang);
+    updateActiveButton(currentLang);
+
+    // Attach click handlers
+    buttons.forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var lang = btn.getAttribute("data-lang");
+        if (lang === currentLang) return;
+        currentLang = lang;
+        localStorage.setItem("wedding-lang", lang);
+        applyLanguage(lang);
+        updateActiveButton(lang);
+      });
+    });
+
+    function updateActiveButton(lang) {
+      buttons.forEach(function(b) {
+        b.classList.toggle("is-active", b.getAttribute("data-lang") === lang);
+      });
+    }
+  }
+
+  function applyLanguage(lang) {
+    var translations = C.translations || {};
+    var t = translations[lang];
+    if (!t) return;
+
+    // Update all elements with data-i18n attribute
+    var els = document.querySelectorAll("[data-i18n]");
+    els.forEach(function(el) {
+      var key = el.getAttribute("data-i18n");
+      if (t[key] != null) {
+        el.textContent = t[key];
+      }
+    });
+
+    // Update HTML lang attribute
+    document.documentElement.lang = (lang === "ru") ? "ru" : "uz";
+  }
+
+  /* Expose getter for other functions */
+  function getLang() {
+    return currentLang;
   }
 
   /* ------------------------------------------------------------------
@@ -85,7 +146,7 @@
       const probe = new Image();
       probe.onload = () => {
         host.classList.remove("hero__media--placeholder");
-        host.style.backgroundImage = `url("${src}")`;
+        host.style.backgroundImage = 'url("' + src + '")';
       };
       probe.onerror = () => {
         // The chosen image is missing. Try the optional external fallback,
@@ -104,7 +165,7 @@
       v.src = media.videoSrc;
       v.autoplay = true; v.muted = true; v.loop = true; v.playsInline = true;
       v.poster = media.imageSrc || "";
-      // If the video can't load, fall back to image → placeholder chain.
+      // If the video can't load, fall back to image -> placeholder chain.
       v.onerror = () => {
         v.remove();
         applyImage(media.imageSrc || fallback);
@@ -116,7 +177,7 @@
   }
 
   /* ------------------------------------------------------------------
-     3. PRELOADER  →  HERO ENTRANCE
+     3. PRELOADER -> HERO ENTRANCE
   ------------------------------------------------------------------ */
   function setupPreloader() {
     const preloader = document.getElementById("preloader");
@@ -165,7 +226,9 @@
       if (diff <= 0) {
         ["days", "hours", "minutes", "seconds"].forEach((k) => update(k, 0));
         const title = document.getElementById("countdownTitle");
-        if (title) title.textContent = "Bugun bizning kunimiz!";
+        var translations = C.translations || {};
+        var t = translations[currentLang] || translations.uz || {};
+        if (title) title.textContent = t.countdownDone || "Bugun bizning kunimiz!";
         clearInterval(timer);
         return;
       }
@@ -191,25 +254,27 @@
     audio.src = cfg.src;
     audio.volume = 0.0;
     let playing = false;
+    const targetVolume = 0.17;
 
     const fadeTo = (target, done) => {
-      const step = target > audio.volume ? 0.04 : -0.04;
+      const step = target > audio.volume ? 0.01 : -0.02;
       const id = setInterval(() => {
         let v = audio.volume + step;
-        v = Math.max(0, Math.min(0.55, v));
+        v = Math.max(0, Math.min(targetVolume, v));
         audio.volume = v;
         if ((step > 0 && v >= target) || (step < 0 && v <= target)) {
+          audio.volume = target;
           clearInterval(id);
           if (done) done();
         }
-      }, 40);
+      }, 50);
     };
 
     const play = () => {
       audio.play().then(() => {
         playing = true;
         btn.classList.add("is-playing");
-        fadeTo(0.55);
+        fadeTo(targetVolume);
       }).catch(() => {/* autoplay blocked, wait for click */});
     };
     const pause = () => {
@@ -300,7 +365,7 @@
         const h = document.documentElement.scrollHeight - window.innerHeight;
         if (bar) bar.style.width = (h > 0 ? (y / h) * 100 : 0) + "%";
         if (parallaxOn && heroMedia && y < window.innerHeight) {
-          heroMedia.style.transform = `scale(1) translateY(${y * 0.25}px)`;
+          heroMedia.style.transform = "scale(1) translateY(" + (y * 0.25) + "px)";
         }
         ticking = false;
       });
@@ -354,7 +419,7 @@
         if (p.x > w + 10) p.x = -10;
 
         const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
-        g.addColorStop(0, `rgba(231,200,120,${alpha})`);
+        g.addColorStop(0, "rgba(231,200,120," + alpha + ")");
         g.addColorStop(1, "rgba(231,200,120,0)");
         ctx.fillStyle = g;
         ctx.beginPath();
@@ -377,6 +442,7 @@
   ------------------------------------------------------------------ */
   function init() {
     populate();
+    setupLanguage();
     setupHeroMedia();
     setupPreloader();
     setupCountdown();

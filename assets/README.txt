@@ -16,7 +16,6 @@ js/config.js (the WEDDING_CONFIG object).
 Suggested files:
   - hero.jpg / hero.mp4   -> background photo or video
   - music.mp3             -> romantic instrumental track
-  - gallery-1.jpg ...     -> photos for the gallery
 
 Example (in js/config.js):
 
@@ -29,8 +28,3 @@ Example (in js/config.js):
     src: "assets/music.mp3",
     autoplayOnInteraction: true,
   },
-
-  gallery: [
-    "assets/gallery-1.jpg",
-    "assets/gallery-2.jpg",
-  ],

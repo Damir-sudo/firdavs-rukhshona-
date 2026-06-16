@@ -62,14 +62,14 @@ All wedding data lives in **`js/config.js`** (the `WEDDING_CONFIG` object):
 | Map link               | `location.mapsUrl`                    |
 | Hero photo / video     | `media.imageSrc` / `media.videoSrc`   |
 | Background music       | `music.src`                           |
-| Gallery photos         | `gallery[]`                           |
 | QR target URL          | `qr.url` (auto-detects page if empty) |
 | Luxury effects         | `effects.*`                           |
+| Translations           | `translations.uz` / `translations.ru` |
 
 > Note: in `event.month`, months are 0-indexed (June = 5).
 
 Put your own photos, video and music inside the **`assets/`** folder and
-reference them from the config (e.g. `"assets/gallery-1.jpg"`).
+reference them from the config (e.g. `"assets/hero.jpg"`).
 
 ---
 
@@ -109,7 +109,7 @@ The entry point is `index.html`.
 - Live countdown to 23 June, 19:00
 - Glassmorphism wedding details card
 - One-tap "Marshrutni ochish" map button (Yandex Maps — Fotima Sultan)
-- Masonry photo gallery with keyboard-navigable lightbox
+- UZ/RU language switcher with localStorage persistence
 - Floating background-music control with smooth fade in/out
 - Auto-generated QR code in a premium framed card
 - Floating golden particles, parallax, scroll-reveal animations

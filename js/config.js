@@ -18,16 +18,16 @@ window.WEDDING_CONFIG = {
   /* ---- Invitation copy (Uzbek) ---- */
   text: {
     invitation:
-      "Sizni to‘yimizning eng baxtli kunini biz bilan birga nishonlashga taklif qilamiz",
-    heroSubtitle: "Bizning to‘y kunimiz",
+      "Sizni to'yimizning eng baxtli kunini biz bilan birga nishonlashga taklif qilamiz",
+    heroSubtitle: "Bizning to'y kunimiz",
     countdownTitle: "Bayramgacha qoldi",
-    detailsTitle: "To‘y tafsilotlari",
+    detailsTitle: "To'y tafsilotlari",
     locationTitle: "Manzil",
     locationButton: "Marshrutni ochish",
 
     qrTitle: "Taklifnomani ulashing",
     qrSubtitle: "Ushbu QR kodni skanerlab taklifnomani oching",
-    thankYou: "Sizning tashrifingiz biz uchun eng qadrli sovg‘adir",
+    thankYou: "Sizning tashrifingiz biz uchun eng qadrli sovg'adir",
     finalNames: "Firdavs & Ruxshona",
   },
 
@@ -44,7 +44,7 @@ window.WEDDING_CONFIG = {
     dateLabel: "23 Iyun",
     timeLabel: "19:00",
     venue: "Fotima Sulton",
-    venueNote: "To‘yxona",
+    venueNote: "To'yxona",
   },
 
   /* ---- Countdown labels (Uzbek) ---- */
@@ -85,9 +85,10 @@ window.WEDDING_CONFIG = {
   },
 
   /* ---- Background music ----
-     Replace with your own romantic instrumental track in /assets. ---- */
+     Soft Italian-style instrumental (piano + light strings, no vocals).
+     Very quiet volume with smooth fade-in on first interaction. ---- */
   music: {
-    src: "https://cdn.pixabay.com/download/audio/2022/02/22/audio_d1718ab41b.mp3?filename=once-in-paris-168895.mp3",
+    src: "https://cdn.pixabay.com/download/audio/2024/11/04/audio_4956b4edd1.mp3?filename=calm-and-chill-lo-fi-instrumental-262618.mp3",
     // Start playing as soon as the guest interacts with the page.
     autoplayOnInteraction: true,
   },
@@ -103,5 +104,63 @@ window.WEDDING_CONFIG = {
     particles: true,
     particleCount: 40,
     parallax: true,
+  },
+
+  /* ---- Translations ----
+     UZ is the default language. RU provides Russian equivalents.
+     All keys must match across both language objects. ---- */
+  translations: {
+    uz: {
+      heroSubtitle: "Bizning to'y kunimiz",
+      invitation: "Sizni to'yimizning eng baxtli kunini biz bilan birga nishonlashga taklif qilamiz",
+      countdownTitle: "Bayramgacha qoldi",
+      countdownDone: "Bugun bizning kunimiz!",
+      detailsTitle: "To'y tafsilotlari",
+      locationTitle: "Manzil",
+      locationButton: "Marshrutni ochish",
+      qrTitle: "Taklifnomani ulashing",
+      qrSubtitle: "Ushbu QR kodni skanerlab taklifnomani oching",
+      thankYou: "Sizning tashrifingiz biz uchun eng qadrli sovg'adir",
+      finalNames: "Firdavs & Ruxshona",
+      days: "Kun",
+      hours: "Soat",
+      minutes: "Daqiqa",
+      seconds: "Soniya",
+      dateLabel: "23 Iyun",
+      timeLabel: "19:00",
+      venue: "Fotima Sulton",
+      venueNote: "To'yxona",
+      detailLabelDate: "Sana",
+      detailLabelTime: "Vaqt",
+      detailLabelLocation: "Manzil",
+      scrollText: "Aylantiring",
+      musicAriaLabel: "Musiqa boshqaruvi",
+    },
+    ru: {
+      heroSubtitle: "Наш день свадьбы",
+      invitation: "Мы приглашаем вас разделить с нами самый счастливый день нашей свадьбы",
+      countdownTitle: "До торжества осталось",
+      countdownDone: "Сегодня наш день!",
+      detailsTitle: "Детали свадьбы",
+      locationTitle: "Место проведения",
+      locationButton: "Открыть маршрут",
+      qrTitle: "Поделитесь приглашением",
+      qrSubtitle: "Отсканируйте QR-код, чтобы открыть приглашение",
+      thankYou: "Ваше присутствие \u2014 самый ценный подарок для нас",
+      finalNames: "Firdavs & Ruxshona",
+      days: "Дней",
+      hours: "Часов",
+      minutes: "Минут",
+      seconds: "Секунд",
+      dateLabel: "23 Июня",
+      timeLabel: "19:00",
+      venue: "Fotima Sulton",
+      venueNote: "Банкетный зал",
+      detailLabelDate: "Дата",
+      detailLabelTime: "Время",
+      detailLabelLocation: "Место",
+      scrollText: "Листайте",
+      musicAriaLabel: "Управление музыкой",
+    },
   },
 };
