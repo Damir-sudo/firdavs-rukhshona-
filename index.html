@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d0b08" />
+  <title>Firdavs &amp; Ruxshona — Taklifnoma</title>
+  <meta name="description" content="Firdavs va Ruxshona to‘yiga taklifnoma — 23 Iyun, 19:00, Fotima Sulton." />
+
+  <!-- Premium typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__ring"></div>
+    <div class="preloader__monogram" id="preloaderMonogram">F &amp; R</div>
+  </div>
+
+  <!-- ============ FLOATING PARTICLES LAYER ============ -->
+  <canvas class="particles" id="particles"></canvas>
+
+  <!-- ============ MUSIC BUTTON ============ -->
+  <button class="music-btn" id="musicBtn" aria-label="Musiqa boshqaruvi" title="Musiqa">
+    <span class="music-btn__bars">
+      <span></span><span></span><span></span><span></span>
+    </span>
+  </button>
+  <audio id="bgMusic" loop preload="none"></audio>
+
+  <!-- ============ SCROLL PROGRESS ============ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============ 1. HERO ============ -->
+  <header class="hero" id="hero">
+    <div class="hero__media" id="heroMedia"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal" data-reveal>
+        <span class="line"></span>
+        <span id="heroSubtitle">Bizning to‘y kunimiz</span>
+        <span class="line"></span>
+      </p>
+
+      <h1 class="hero__names">
+        <span class="hero__name" id="groomName" data-anim>Firdavs</span>
+        <span class="hero__amp" id="separator" data-anim>&amp;</span>
+        <span class="hero__name" id="brideName" data-anim>Ruxshona</span>
+      </h1>
+
+      <p class="hero__invite reveal" data-reveal id="heroInvite">
+        Sizni to‘yimizning eng baxtli kunini biz bilan birga nishonlashga taklif qilamiz
+      </p>
+
+      <div class="hero__date reveal" data-reveal>
+        <span id="heroDate">23 Iyun</span>
+        <span class="dot">•</span>
+        <span id="heroTime">19:00</span>
+      </div>
+    </div>
+
+    <a href="#countdown" class="hero__scroll" aria-label="Pastga aylantiring">
+      <span class="hero__scroll-text">Aylantiring</span>
+      <span class="hero__scroll-line"></span>
+    </a>
+  </header>
+
+  <!-- ============ 2. COUNTDOWN ============ -->
+  <section class="section countdown" id="countdown">
+    <div class="section__deco" data-reveal>❦</div>
+    <h2 class="section__title" data-reveal id="countdownTitle">Bayramgacha qoldi</h2>
+
+    <div class="countdown__grid" id="countdownGrid">
+      <div class="count-card" data-reveal>
+        <div class="count-card__num" id="cd-days">00</div>
+        <div class="count-card__label" id="lbl-days">Kun</div>
+      </div>
+      <div class="count-card" data-reveal>
+        <div class="count-card__num" id="cd-hours">00</div>
+        <div class="count-card__label" id="lbl-hours">Soat</div>
+      </div>
+      <div class="count-card" data-reveal>
+        <div class="count-card__num" id="cd-minutes">00</div>
+        <div class="count-card__label" id="lbl-minutes">Daqiqa</div>
+      </div>
+      <div class="count-card" data-reveal>
+        <div class="count-card__num" id="cd-seconds">00</div>
+        <div class="count-card__label" id="lbl-seconds">Soniya</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. WEDDING DETAILS ============ -->
+  <section class="section details" id="details">
+    <h2 class="section__title" data-reveal id="detailsTitle">To‘y tafsilotlari</h2>
+
+    <div class="details__card glass" data-reveal>
+      <div class="detail">
+        <div class="detail__icon" aria-hidden="true">
+          <!-- calendar -->
+          <svg viewBox="0 0 24 24"><path d="M7 2v3M17 2v3M3.5 9h17M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/></svg>
+        </div>
+        <div class="detail__label">Sana</div>
+        <div class="detail__value" id="detDate">23 Iyun</div>
+      </div>
+
+      <div class="detail__divider"></div>
+
+      <div class="detail">
+        <div class="detail__icon" aria-hidden="true">
+          <!-- clock -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+        </div>
+        <div class="detail__label">Vaqt</div>
+        <div class="detail__value" id="detTime">19:00</div>
+      </div>
+
+      <div class="detail__divider"></div>
+
+      <div class="detail">
+        <div class="detail__icon" aria-hidden="true">
+          <!-- pin -->
+          <svg viewBox="0 0 24 24"><path d="M12 21s7-6.16 7-11a7 7 0 1 0-14 0c0 4.84 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </div>
+        <div class="detail__label">Manzil</div>
+        <div class="detail__value" id="detVenue">Fotima Sulton</div>
+        <div class="detail__note" id="detVenueNote">To‘yxona</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. LOCATION ============ -->
+  <section class="section location" id="location">
+    <div class="section__deco" data-reveal>✦</div>
+    <h2 class="section__title" data-reveal id="locationTitle">Manzil</h2>
+    <p class="location__venue" data-reveal id="locVenue">Fotima Sulton</p>
+    <a href="#" class="btn-lux" id="mapsBtn" target="_blank" rel="noopener" data-reveal>
+      <span class="btn-lux__icon">
+        <svg viewBox="0 0 24 24"><path d="M12 21s7-6.16 7-11a7 7 0 1 0-14 0c0 4.84 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      </span>
+      <span id="mapsBtnText">Marshrutni ochish</span>
+    </a>
+  </section>
+
+  <!-- ============ 5. PHOTO GALLERY ============ -->
+  <section class="section gallery" id="gallery">
+    <h2 class="section__title" data-reveal id="galleryTitle">Bizning lahzalarimiz</h2>
+    <div class="gallery__grid" id="galleryGrid"></div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lbClose" aria-label="Yopish">&times;</button>
+    <button class="lightbox__nav lightbox__prev" id="lbPrev" aria-label="Oldingi">&#8249;</button>
+    <img class="lightbox__img" id="lbImg" src="" alt="" />
+    <button class="lightbox__nav lightbox__next" id="lbNext" aria-label="Keyingi">&#8250;</button>
+  </div>
+
+  <!-- ============ 7. QR CODE ============ -->
+  <section class="section qr" id="qr">
+    <h2 class="section__title" data-reveal id="qrTitle">Taklifnomani ulashing</h2>
+    <p class="qr__subtitle" data-reveal id="qrSubtitle">Ushbu QR kodni skanerlab taklifnomani oching</p>
+    <div class="qr__card glass" data-reveal>
+      <div class="qr__frame">
+        <div id="qrCode" class="qr__code"></div>
+      </div>
+      <div class="qr__corner qr__corner--tl"></div>
+      <div class="qr__corner qr__corner--tr"></div>
+      <div class="qr__corner qr__corner--bl"></div>
+      <div class="qr__corner qr__corner--br"></div>
+    </div>
+  </section>
+
+  <!-- ============ 9. FINAL ============ -->
+  <section class="section final" id="final">
+    <div class="final__inner">
+      <div class="final__deco" data-reveal>❦</div>
+      <p class="final__thanks" data-reveal id="finalThanks">
+        Sizning tashrifingiz biz uchun eng qadrli sovg‘adir
+      </p>
+      <h2 class="final__names" data-reveal id="finalNames">Firdavs &amp; Ruxshona</h2>
+      <p class="final__date" data-reveal>
+        <span id="finalDate">23 Iyun</span> • <span id="finalTime">19:00</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
