@@ -9,13 +9,18 @@
   const $ = (sel) => document.querySelector(sel);
   const setText = (id, value) => {
     const el = document.getElementById(id);
-    if (el != null && value != null) el.textContent = value;
+    if (el != null && value != null) {
+      // Skip elements managed by the i18n system to avoid overwriting translations
+      if (el.hasAttribute("data-i18n")) return;
+      el.textContent = value;
+    }
   };
 
   /* ------------------------------------------------------------------
      CURRENT LANGUAGE STATE
   ------------------------------------------------------------------ */
   let currentLang = "uz";
+  let countdownExpired = false;
 
   /* ------------------------------------------------------------------
      1. POPULATE CONTENT FROM CONFIG
@@ -113,6 +118,11 @@
     var els = document.querySelectorAll("[data-i18n]");
     els.forEach(function(el) {
       var key = el.getAttribute("data-i18n");
+      // If countdown has expired, show the done message instead of the title
+      if (key === "countdownTitle" && countdownExpired) {
+        el.textContent = t.countdownDone || t.countdownTitle;
+        return;
+      }
       if (t[key] != null) {
         el.textContent = t[key];
       }
@@ -225,6 +235,7 @@
       const diff = target - Date.now();
       if (diff <= 0) {
         ["days", "hours", "minutes", "seconds"].forEach((k) => update(k, 0));
+        countdownExpired = true;
         const title = document.getElementById("countdownTitle");
         var translations = C.translations || {};
         var t = translations[currentLang] || translations.uz || {};
@@ -441,8 +452,8 @@
      INIT
   ------------------------------------------------------------------ */
   function init() {
-    populate();
     setupLanguage();
+    populate();
     setupHeroMedia();
     setupPreloader();
     setupCountdown();

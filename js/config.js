@@ -15,7 +15,10 @@ window.WEDDING_CONFIG = {
     separator: "&",
   },
 
-  /* ---- Invitation copy (Uzbek) ---- */
+  /* ---- Invitation copy (Uzbek) ----
+     NOTE: These values duplicate translations.uz entries below.
+     The translations object is authoritative for i18n; these legacy
+     fields are kept for backward compatibility with populate(). ---- */
   text: {
     invitation:
       "Sizni to'yimizning eng baxtli kunini biz bilan birga nishonlashga taklif qilamiz",
@@ -88,7 +91,7 @@ window.WEDDING_CONFIG = {
      Soft Italian-style instrumental (piano + light strings, no vocals).
      Very quiet volume with smooth fade-in on first interaction. ---- */
   music: {
-    src: "https://cdn.pixabay.com/download/audio/2024/11/04/audio_4956b4edd1.mp3?filename=calm-and-chill-lo-fi-instrumental-262618.mp3",
+    src: "https://cdn.pixabay.com/download/audio/2023/10/30/audio_ffd3ef4bff.mp3?filename=slowmo-piano-171562.mp3",
     // Start playing as soon as the guest interacts with the page.
     autoplayOnInteraction: true,
   },
