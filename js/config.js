@@ -24,7 +24,7 @@ window.WEDDING_CONFIG = {
     detailsTitle: "To‘y tafsilotlari",
     locationTitle: "Manzil",
     locationButton: "Marshrutni ochish",
-    galleryTitle: "Bizning lahzalarimiz",
+
     qrTitle: "Taklifnomani ulashing",
     qrSubtitle: "Ushbu QR kodni skanerlab taklifnomani oching",
     thankYou: "Sizning tashrifingiz biz uchun eng qadrli sovg‘adir",
@@ -87,21 +87,10 @@ window.WEDDING_CONFIG = {
   /* ---- Background music ----
      Replace with your own romantic instrumental track in /assets. ---- */
   music: {
-    src: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_8cb749d484.mp3?filename=relaxing-145038.mp3",
+    src: "https://cdn.pixabay.com/download/audio/2022/02/22/audio_d1718ab41b.mp3?filename=once-in-paris-168895.mp3",
     // Start playing as soon as the guest interacts with the page.
     autoplayOnInteraction: true,
   },
-
-  /* ---- Photo gallery ----
-     Add as many image URLs (or /assets paths) as you like. ---- */
-  gallery: [
-    "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1000&q=80",
-    "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1000&q=80",
-  ],
 
   /* ---- QR code ----
      Leave url empty "" to auto-detect the current page URL. ---- */

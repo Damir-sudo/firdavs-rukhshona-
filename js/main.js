@@ -38,7 +38,6 @@
     setText("countdownTitle", text.countdownTitle);
     setText("detailsTitle", text.detailsTitle);
     setText("locationTitle", text.locationTitle);
-    setText("galleryTitle", text.galleryTitle);
     setText("qrTitle", text.qrTitle);
     setText("qrSubtitle", text.qrSubtitle);
 
@@ -180,61 +179,6 @@
     render();
     const timer = setInterval(render, 1000);
   }
-
-  /* ------------------------------------------------------------------
-     5. PHOTO GALLERY + LIGHTBOX
-  ------------------------------------------------------------------ */
-  function setupGallery() {
-    const grid = document.getElementById("galleryGrid");
-    const images = C.gallery || [];
-    if (!grid) return;
-
-    images.forEach((src, i) => {
-      const item = document.createElement("figure");
-      item.className = "gallery__item";
-      item.setAttribute("data-index", i);
-      item.innerHTML =
-        `<img src="${src}" alt="To‘y surati ${i + 1}" loading="lazy" />` +
-        `<span class="gallery__plus">+</span>`;
-      grid.appendChild(item);
-    });
-
-    // Lightbox
-    const lb = document.getElementById("lightbox");
-    const lbImg = document.getElementById("lbImg");
-    const lbClose = document.getElementById("lbClose");
-    const lbPrev = document.getElementById("lbPrev");
-    const lbNext = document.getElementById("lbNext");
-    let current = 0;
-
-    const show = (i) => {
-      current = (i + images.length) % images.length;
-      lbImg.src = images[current];
-      lb.classList.add("is-open");
-      lb.setAttribute("aria-hidden", "false");
-    };
-    const close = () => {
-      lb.classList.remove("is-open");
-      lb.setAttribute("aria-hidden", "true");
-    };
-
-    grid.addEventListener("click", (ev) => {
-      const item = ev.target.closest(".gallery__item");
-      if (item) show(parseInt(item.getAttribute("data-index"), 10));
-    });
-    if (lbClose) lbClose.addEventListener("click", close);
-    if (lbPrev) lbPrev.addEventListener("click", () => show(current - 1));
-    if (lbNext) lbNext.addEventListener("click", () => show(current + 1));
-    if (lb) lb.addEventListener("click", (ev) => { if (ev.target === lb) close(); });
-
-    document.addEventListener("keydown", (ev) => {
-      if (!lb || !lb.classList.contains("is-open")) return;
-      if (ev.key === "Escape") close();
-      if (ev.key === "ArrowLeft") show(current - 1);
-      if (ev.key === "ArrowRight") show(current + 1);
-    });
-  }
-
   /* ------------------------------------------------------------------
      6. BACKGROUND MUSIC
   ------------------------------------------------------------------ */
@@ -436,7 +380,6 @@
     setupHeroMedia();
     setupPreloader();
     setupCountdown();
-    setupGallery();
     setupMusic();
     setupQR();
     setupReveal();
