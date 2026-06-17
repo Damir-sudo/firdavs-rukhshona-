@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#FDFCFA" />
+  <meta name="theme-color" content="#4A0E1C" />
   <title>Firdavs &amp; Ruxshona — Taklifnoma</title>
   <meta name="description" content="Firdavs va Ruxshona to'yiga taklifnoma — 23 Iyun, 19:00, Fotima Sulton." />
 
@@ -46,6 +46,25 @@
   <header class="hero" id="hero">
     <div class="hero__media" id="heroMedia"></div>
     <div class="hero__overlay"></div>
+
+    <!-- Floating Petals -->
+    <div class="petals-container" id="petalsContainer">
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+    </div>
 
     <div class="hero__content">
       <p class="hero__eyebrow reveal" data-reveal>
@@ -142,7 +161,70 @@
   <section class="section location" id="location">
     <div class="section__deco" data-reveal>&#10022;</div>
     <h2 class="section__title" data-reveal id="locationTitle" data-i18n="locationTitle">Manzil</h2>
+
+    <!-- Elegant venue line-art SVG illustration -->
+    <div class="location__illustration" data-reveal>
+      <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+        <!-- Ground line -->
+        <path d="M10 105 H190" stroke="#D4B87A" stroke-width="0.5" opacity="0.6"/>
+        <!-- Main building body -->
+        <rect x="35" y="40" width="130" height="65" rx="1" stroke="#FFF8F0" stroke-width="0.7"/>
+        <!-- Decorative roofline -->
+        <path d="M30 40 H170" stroke="#D4B87A" stroke-width="0.8"/>
+        <path d="M32 37 H168" stroke="#FFF8F0" stroke-width="0.4" opacity="0.7"/>
+        <!-- Ornamental top parapet -->
+        <path d="M50 40 L50 35 L60 35 L60 40" stroke="#FFF8F0" stroke-width="0.5"/>
+        <path d="M70 40 L70 35 L80 35 L80 40" stroke="#FFF8F0" stroke-width="0.5"/>
+        <path d="M120 40 L120 35 L130 35 L130 40" stroke="#FFF8F0" stroke-width="0.5"/>
+        <path d="M140 40 L140 35 L150 35 L150 40" stroke="#FFF8F0" stroke-width="0.5"/>
+        <!-- Central dome / pediment -->
+        <path d="M80 40 L80 28 Q100 15 120 28 L120 40" stroke="#D4B87A" stroke-width="0.8" fill="none"/>
+        <circle cx="100" cy="20" r="2" stroke="#D4B87A" stroke-width="0.5"/>
+        <!-- Flag/finial on top -->
+        <line x1="100" y1="18" x2="100" y2="12" stroke="#D4B87A" stroke-width="0.4"/>
+        <path d="M100 12 L104 14 L100 15" stroke="#D4B87A" stroke-width="0.3" fill="none"/>
+        <!-- Arched entrance -->
+        <path d="M85 105 L85 68 Q100 55 115 68 L115 105" stroke="#FFF8F0" stroke-width="0.8"/>
+        <!-- Double doors -->
+        <line x1="100" y1="105" x2="100" y2="68" stroke="#FFF8F0" stroke-width="0.4" opacity="0.6"/>
+        <!-- Door handles -->
+        <circle cx="97" cy="88" r="0.8" stroke="#D4B87A" stroke-width="0.4"/>
+        <circle cx="103" cy="88" r="0.8" stroke="#D4B87A" stroke-width="0.4"/>
+        <!-- Left columns -->
+        <line x1="45" y1="40" x2="45" y2="105" stroke="#FFF8F0" stroke-width="0.6"/>
+        <line x1="60" y1="40" x2="60" y2="105" stroke="#FFF8F0" stroke-width="0.6"/>
+        <!-- Right columns -->
+        <line x1="140" y1="40" x2="140" y2="105" stroke="#FFF8F0" stroke-width="0.6"/>
+        <line x1="155" y1="40" x2="155" y2="105" stroke="#FFF8F0" stroke-width="0.6"/>
+        <!-- Column capitals (left) -->
+        <path d="M42 42 L48 42" stroke="#D4B87A" stroke-width="0.5"/>
+        <path d="M57 42 L63 42" stroke="#D4B87A" stroke-width="0.5"/>
+        <!-- Column capitals (right) -->
+        <path d="M137 42 L143 42" stroke="#D4B87A" stroke-width="0.5"/>
+        <path d="M152 42 L158 42" stroke="#D4B87A" stroke-width="0.5"/>
+        <!-- Windows left side -->
+        <rect x="42" y="55" width="8" height="14" rx="4" stroke="#FFF8F0" stroke-width="0.5"/>
+        <rect x="55" y="55" width="8" height="14" rx="4" stroke="#FFF8F0" stroke-width="0.5"/>
+        <rect x="42" y="78" width="8" height="14" rx="4" stroke="#FFF8F0" stroke-width="0.5"/>
+        <rect x="55" y="78" width="8" height="14" rx="4" stroke="#FFF8F0" stroke-width="0.5"/>
+        <!-- Windows right side -->
+        <rect x="137" y="55" width="8" height="14" rx="4" stroke="#FFF8F0" stroke-width="0.5"/>
+        <rect x="150" y="55" width="8" height="14" rx="4" stroke="#FFF8F0" stroke-width="0.5"/>
+        <rect x="137" y="78" width="8" height="14" rx="4" stroke="#FFF8F0" stroke-width="0.5"/>
+        <rect x="150" y="78" width="8" height="14" rx="4" stroke="#FFF8F0" stroke-width="0.5"/>
+        <!-- Decorative arch detail above entrance -->
+        <path d="M88 60 Q100 52 112 60" stroke="#D4B87A" stroke-width="0.4" fill="none"/>
+        <!-- Steps -->
+        <path d="M82 105 H118 V108 H79 V105" stroke="#FFF8F0" stroke-width="0.4"/>
+        <path d="M79 108 H121 V110 H76 V108" stroke="#FFF8F0" stroke-width="0.3" opacity="0.5"/>
+        <!-- Decorative lanterns -->
+        <rect x="83" y="62" width="3" height="4" stroke="#D4B87A" stroke-width="0.3"/>
+        <rect x="114" y="62" width="3" height="4" stroke="#D4B87A" stroke-width="0.3"/>
+      </svg>
+    </div>
+
     <p class="location__venue" data-reveal id="locVenue">Fotima Sulton</p>
+    <p class="location__city" data-reveal id="locCity" data-i18n="city">Samarqand</p>
     <a href="#" class="btn-lux" id="mapsBtn" target="_blank" rel="noopener" data-reveal>
       <span class="btn-lux__icon">
         <svg viewBox="0 0 24 24"><path d="M12 21s7-6.16 7-11a7 7 0 1 0-14 0c0 4.84 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
@@ -153,6 +235,8 @@
 
   <!-- ============ 5. FINAL ============ -->
   <section class="section final" id="final">
+    <div class="final__bg"></div>
+    <div class="final__overlay"></div>
     <div class="final__inner">
       <div class="final__deco" data-reveal>&#10086;</div>
       <p class="final__thanks" data-reveal id="finalThanks" data-i18n="thankYou">
