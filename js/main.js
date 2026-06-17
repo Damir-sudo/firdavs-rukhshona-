@@ -337,6 +337,30 @@
   }
 
   /* ------------------------------------------------------------------
+     5. FLOATING PETALS
+  ------------------------------------------------------------------ */
+  function setupPetals() {
+    var container = document.getElementById("petalsContainer");
+    if (!container) return;
+    var petals = container.querySelectorAll(".petal");
+    petals.forEach(function(petal) {
+      var size = Math.random() * 12 + 8; // 8-20px
+      var left = Math.random() * 100;
+      var delay = Math.random() * 12;
+      var duration = Math.random() * 8 + 10; // 10-18s
+      var driftDuration = Math.random() * 6 + 6; // 6-12s
+      var rotateDuration = Math.random() * 8 + 8; // 8-16s
+
+      petal.style.width = size + "px";
+      petal.style.height = size + "px";
+      petal.style.left = left + "%";
+      petal.style.top = "-" + (Math.random() * 20 + 10) + "px";
+      petal.style.animationDelay = delay + "s, " + (delay * 0.7) + "s, " + (delay * 0.5) + "s";
+      petal.style.animationDuration = duration + "s, " + driftDuration + "s, " + rotateDuration + "s";
+    });
+  }
+
+  /* ------------------------------------------------------------------
      8b. SCROLL PROGRESS + PARALLAX
   ------------------------------------------------------------------ */
   function setupScrollFX() {
@@ -372,6 +396,7 @@
     setupPreloader();
     setupCountdown();
     setupMusic();
+    setupPetals();
     setupReveal();
     setupScrollFX();
   }

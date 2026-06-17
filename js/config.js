@@ -45,6 +45,7 @@ window.WEDDING_CONFIG = {
     timeLabel: "19:00",
     venue: "Fotima Sulton",
     venueNote: "To'yxona",
+    city: "Samarkand",
   },
 
   /* ---- Countdown labels (Uzbek) ---- */
@@ -111,6 +112,7 @@ window.WEDDING_CONFIG = {
       detailLabelLocation: "Manzil",
       scrollText: "Aylantiring",
       musicAriaLabel: "Musiqa boshqaruvi",
+      city: "Samarqand",
     },
     ru: {
       heroSubtitle: "Наш день свадьбы",
@@ -135,6 +137,7 @@ window.WEDDING_CONFIG = {
       detailLabelLocation: "Место",
       scrollText: "Листайте",
       musicAriaLabel: "Управление музыкой",
+      city: "Самарканд",
     },
   },
 };
