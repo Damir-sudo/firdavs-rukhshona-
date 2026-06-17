@@ -1,5 +1,5 @@
 /* =====================================================================
-   FIRDAVS & RUXSHONA — Luxury Invitation Logic
+   FIRDAVS & RUXSHONA — Premium Wedding Invitation Logic
    All editable data lives in js/config.js (WEDDING_CONFIG)
    ===================================================================== */
 (function () {
@@ -48,8 +48,6 @@
     setText("countdownTitle", text.countdownTitle);
     setText("detailsTitle", text.detailsTitle);
     setText("locationTitle", text.locationTitle);
-    setText("qrTitle", text.qrTitle);
-    setText("qrSubtitle", text.qrSubtitle);
 
     // Countdown labels
     setText("lbl-days", countdownLabels.days);
@@ -147,7 +145,7 @@
 
     const fallback = media.fallbackImage || "";
 
-    // Show the built-in elegant CSS luxury placeholder.
+    // Show the built-in elegant CSS placeholder.
     const showPlaceholder = () => host.classList.add("hero__media--placeholder");
 
     const applyImage = (src) => {
@@ -160,7 +158,7 @@
       };
       probe.onerror = () => {
         // The chosen image is missing. Try the optional external fallback,
-        // otherwise fall back to the built-in CSS luxury placeholder.
+        // otherwise fall back to the built-in CSS placeholder.
         if (fallback && src !== fallback) {
           applyImage(fallback);
         } else {
@@ -253,6 +251,7 @@
     render();
     const timer = setInterval(render, 1000);
   }
+
   /* ------------------------------------------------------------------
      6. BACKGROUND MUSIC
   ------------------------------------------------------------------ */
@@ -311,28 +310,6 @@
   }
 
   /* ------------------------------------------------------------------
-     7. QR CODE
-  ------------------------------------------------------------------ */
-  function setupQR() {
-    const host = document.getElementById("qrCode");
-    if (!host || typeof QRCode === "undefined") return;
-    const url = (C.qr && C.qr.url) ? C.qr.url : window.location.href;
-    host.innerHTML = "";
-    try {
-      new QRCode(host, {
-        text: url,
-        width: 200,
-        height: 200,
-        colorDark: "#0d0b08",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H,
-      });
-    } catch (err) {
-      host.textContent = "QR";
-    }
-  }
-
-  /* ------------------------------------------------------------------
      8a. SCROLL REVEAL (IntersectionObserver)
   ------------------------------------------------------------------ */
   function setupReveal() {
@@ -376,76 +353,13 @@
         const h = document.documentElement.scrollHeight - window.innerHeight;
         if (bar) bar.style.width = (h > 0 ? (y / h) * 100 : 0) + "%";
         if (parallaxOn && heroMedia && y < window.innerHeight) {
-          heroMedia.style.transform = "scale(1) translateY(" + (y * 0.25) + "px)";
+          heroMedia.style.transform = "scale(1) translateY(" + (y * 0.2) + "px)";
         }
         ticking = false;
       });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-  }
-
-  /* ------------------------------------------------------------------
-     8c. FLOATING GOLDEN PARTICLES (canvas)
-  ------------------------------------------------------------------ */
-  function setupParticles() {
-    const cfg = C.effects || {};
-    const canvas = document.getElementById("particles");
-    if (!canvas || cfg.particles === false) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const ctx = canvas.getContext("2d");
-    let w, h, particles = [];
-    const count = cfg.particleCount || 40;
-
-    function resize() {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
-    }
-    function make() {
-      return {
-        x: Math.random() * w,
-        y: Math.random() * h,
-        r: Math.random() * 2.2 + 0.6,
-        sp: Math.random() * 0.4 + 0.12,
-        drift: Math.random() * 0.6 - 0.3,
-        a: Math.random() * 0.5 + 0.25,
-        tw: Math.random() * 0.02 + 0.005,
-        tp: Math.random() * Math.PI * 2,
-      };
-    }
-    function init() {
-      resize();
-      particles = Array.from({ length: count }, make);
-    }
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      particles.forEach((p) => {
-        p.y -= p.sp;
-        p.x += p.drift;
-        p.tp += p.tw;
-        const alpha = p.a * (0.6 + 0.4 * Math.sin(p.tp));
-        if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
-        if (p.x < -10) p.x = w + 10;
-        if (p.x > w + 10) p.x = -10;
-
-        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
-        g.addColorStop(0, "rgba(231,200,120," + alpha + ")");
-        g.addColorStop(1, "rgba(231,200,120,0)");
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r * 4, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      requestAnimationFrame(draw);
-    }
-    init();
-    draw();
-    let rt;
-    window.addEventListener("resize", () => {
-      clearTimeout(rt);
-      rt = setTimeout(init, 200);
-    });
   }
 
   /* ------------------------------------------------------------------
@@ -458,10 +372,8 @@
     setupPreloader();
     setupCountdown();
     setupMusic();
-    setupQR();
     setupReveal();
     setupScrollFX();
-    setupParticles();
   }
 
   if (document.readyState === "loading") {
