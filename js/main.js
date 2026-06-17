@@ -337,7 +337,7 @@
   }
 
   /* ------------------------------------------------------------------
-     9. FLOATING PETALS
+     5. FLOATING PETALS
   ------------------------------------------------------------------ */
   function setupPetals() {
     var container = document.getElementById("petalsContainer");

@@ -208,10 +208,10 @@ a { color: inherit; text-decoration: none; }
   100% { transform: translateY(calc(100vh + 20px)); opacity: 0; }
 }
 @keyframes petalDrift {
-  0%, 100% { margin-left: 0; }
-  25% { margin-left: 30px; }
-  50% { margin-left: -20px; }
-  75% { margin-left: 15px; }
+  0%, 100% { translate: 0; }
+  25% { translate: 30px; }
+  50% { translate: -20px; }
+  75% { translate: 15px; }
 }
 @keyframes petalRotate {
   0% { rotate: 0deg; }
@@ -416,6 +416,9 @@ a { color: inherit; text-decoration: none; }
 }
 .details .section__title::after {
   background: linear-gradient(90deg, transparent, var(--wine-light), transparent);
+}
+.details .section__deco {
+  color: var(--wine);
 }
 .details__card {
   width: min(860px, 100%);
