@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0d0b08" />
+  <meta name="theme-color" content="#FDFCFA" />
   <title>Firdavs &amp; Ruxshona — Taklifnoma</title>
   <meta name="description" content="Firdavs va Ruxshona to'yiga taklifnoma — 23 Iyun, 19:00, Fotima Sulton." />
 
@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
 
@@ -24,9 +24,6 @@
     <div class="preloader__ring"></div>
     <div class="preloader__monogram" id="preloaderMonogram">F &amp; R</div>
   </div>
-
-  <!-- ============ FLOATING PARTICLES LAYER ============ -->
-  <canvas class="particles" id="particles"></canvas>
 
   <!-- ============ MUSIC BUTTON ============ -->
   <button class="music-btn" id="musicBtn" aria-label="Musiqa boshqaruvi" title="Musiqa">
@@ -69,7 +66,7 @@
 
       <div class="hero__date reveal" data-reveal>
         <span id="heroDate" data-i18n="dateLabel">23 Iyun</span>
-        <span class="dot">•</span>
+        <span class="dot">&#183;</span>
         <span id="heroTime">19:00</span>
       </div>
     </div>
@@ -109,10 +106,9 @@
   <section class="section details" id="details">
     <h2 class="section__title" data-reveal id="detailsTitle" data-i18n="detailsTitle">To'y tafsilotlari</h2>
 
-    <div class="details__card glass" data-reveal>
+    <div class="details__card" data-reveal>
       <div class="detail">
         <div class="detail__icon" aria-hidden="true">
-          <!-- calendar -->
           <svg viewBox="0 0 24 24"><path d="M7 2v3M17 2v3M3.5 9h17M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/></svg>
         </div>
         <div class="detail__label" data-i18n="detailLabelDate">Sana</div>
@@ -123,7 +119,6 @@
 
       <div class="detail">
         <div class="detail__icon" aria-hidden="true">
-          <!-- clock -->
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
         </div>
         <div class="detail__label" data-i18n="detailLabelTime">Vaqt</div>
@@ -134,7 +129,6 @@
 
       <div class="detail">
         <div class="detail__icon" aria-hidden="true">
-          <!-- pin -->
           <svg viewBox="0 0 24 24"><path d="M12 21s7-6.16 7-11a7 7 0 1 0-14 0c0 4.84 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
         </div>
         <div class="detail__label" data-i18n="detailLabelLocation">Manzil</div>
@@ -157,37 +151,7 @@
     </a>
   </section>
 
-  <!-- ============ 5. LUXURY DIVIDER ============ -->
-  <section class="section luxury-divider" id="divider" aria-hidden="true">
-    <div class="luxury-divider__ornament" data-reveal>
-      <span class="luxury-divider__line"></span>
-      <span class="luxury-divider__symbol">&#10053;</span>
-      <span class="luxury-divider__line"></span>
-    </div>
-    <div class="luxury-divider__flourish" data-reveal>&#10086;</div>
-    <div class="luxury-divider__ornament" data-reveal>
-      <span class="luxury-divider__line"></span>
-      <span class="luxury-divider__symbol">&#10053;</span>
-      <span class="luxury-divider__line"></span>
-    </div>
-  </section>
-
-  <!-- ============ 7. QR CODE ============ -->
-  <section class="section qr" id="qr">
-    <h2 class="section__title" data-reveal id="qrTitle" data-i18n="qrTitle">Taklifnomani ulashing</h2>
-    <p class="qr__subtitle" data-reveal id="qrSubtitle" data-i18n="qrSubtitle">Ushbu QR kodni skanerlab taklifnomani oching</p>
-    <div class="qr__card glass" data-reveal>
-      <div class="qr__frame">
-        <div id="qrCode" class="qr__code"></div>
-      </div>
-      <div class="qr__corner qr__corner--tl"></div>
-      <div class="qr__corner qr__corner--tr"></div>
-      <div class="qr__corner qr__corner--bl"></div>
-      <div class="qr__corner qr__corner--br"></div>
-    </div>
-  </section>
-
-  <!-- ============ 9. FINAL ============ -->
+  <!-- ============ 5. FINAL ============ -->
   <section class="section final" id="final">
     <div class="final__inner">
       <div class="final__deco" data-reveal>&#10086;</div>
@@ -196,13 +160,12 @@
       </p>
       <h2 class="final__names" data-reveal id="finalNames">Firdavs &amp; Ruxshona</h2>
       <p class="final__date" data-reveal>
-        <span id="finalDate" data-i18n="dateLabel">23 Iyun</span> • <span id="finalTime">19:00</span>
+        <span id="finalDate" data-i18n="dateLabel">23 Iyun</span> &#183; <span id="finalTime">19:00</span>
       </p>
     </div>
   </section>
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
 </body>

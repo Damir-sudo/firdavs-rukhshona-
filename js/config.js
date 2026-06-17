@@ -11,7 +11,7 @@ window.WEDDING_CONFIG = {
   couple: {
     groom: "Firdavs",
     bride: "Ruxshona",
-    // Symbol shown between the two names ("&", "♥", "and" ...)
+    // Symbol shown between the two names ("&", "&#10084;", "and" ...)
     separator: "&",
   },
 
@@ -27,9 +27,6 @@ window.WEDDING_CONFIG = {
     detailsTitle: "To'y tafsilotlari",
     locationTitle: "Manzil",
     locationButton: "Marshrutni ochish",
-
-    qrTitle: "Taklifnomani ulashing",
-    qrSubtitle: "Ushbu QR kodni skanerlab taklifnomani oching",
     thankYou: "Sizning tashrifingiz biz uchun eng qadrli sovg'adir",
     finalNames: "Firdavs & Ruxshona",
   },
@@ -59,31 +56,18 @@ window.WEDDING_CONFIG = {
   },
 
   /* ---- Location ----
-     Paste your Google Maps share link here when ready. ---- */
+     Paste your Yandex/Google Maps share link here. ---- */
   location: {
-    // Yandex Maps — Fotima Sultan to'yxonasi
     mapsUrl:
       "https://yandex.uz/maps/org/fotima_sultan/228306744515/?ll=66.967199%2C39.664909&z=16",
   },
 
   /* ---- Background media ----
      Use ONE of the two. If videoSrc is set it takes priority.
-     Drop your file into the /assets folder and reference it here.
-
-     >>> Put your uploaded file in /assets and name it "hero".
-         - For a photo:  assets/hero.jpg
-         - For a video:  assets/hero.mp4  (also set imageSrc as poster)
-
-     If the local file is missing, the site automatically falls back to
-     `fallbackImage` so the page never looks broken. ---- */
+     Drop your file into the /assets folder and reference it here. ---- */
   media: {
-    // Set to "assets/hero.mp4" if you use a video. Leave "" for a photo.
     videoSrc: "",
-    // Your hero photo. Just drop a file named hero.jpg into /assets and
-    // it loads automatically — no code changes needed.
     imageSrc: "assets/hero.jpg",
-    // OPTIONAL external fallback image URL. Leave "" to use the built-in
-    // elegant CSS luxury placeholder when hero.jpg is missing.
     fallbackImage: "",
   },
 
@@ -92,20 +76,11 @@ window.WEDDING_CONFIG = {
      Very quiet volume with smooth fade-in on first interaction. ---- */
   music: {
     src: "https://cdn.pixabay.com/download/audio/2023/10/30/audio_ffd3ef4bff.mp3?filename=slowmo-piano-171562.mp3",
-    // Start playing as soon as the guest interacts with the page.
     autoplayOnInteraction: true,
   },
 
-  /* ---- QR code ----
-     Leave url empty "" to auto-detect the current page URL. ---- */
-  qr: {
-    url: "",
-  },
-
-  /* ---- Luxury effects toggles ---- */
+  /* ---- Effects toggles ---- */
   effects: {
-    particles: true,
-    particleCount: 40,
     parallax: true,
   },
 
@@ -121,8 +96,6 @@ window.WEDDING_CONFIG = {
       detailsTitle: "To'y tafsilotlari",
       locationTitle: "Manzil",
       locationButton: "Marshrutni ochish",
-      qrTitle: "Taklifnomani ulashing",
-      qrSubtitle: "Ushbu QR kodni skanerlab taklifnomani oching",
       thankYou: "Sizning tashrifingiz biz uchun eng qadrli sovg'adir",
       finalNames: "Firdavs & Ruxshona",
       days: "Kun",
@@ -147,9 +120,7 @@ window.WEDDING_CONFIG = {
       detailsTitle: "Детали свадьбы",
       locationTitle: "Место проведения",
       locationButton: "Открыть маршрут",
-      qrTitle: "Поделитесь приглашением",
-      qrSubtitle: "Отсканируйте QR-код, чтобы открыть приглашение",
-      thankYou: "Ваше присутствие \u2014 самый ценный подарок для нас",
+      thankYou: "Ваше присутствие - самый ценный подарок для нас",
       finalNames: "Firdavs & Ruxshona",
       days: "Дней",
       hours: "Часов",
